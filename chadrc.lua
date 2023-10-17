@@ -7,7 +7,7 @@ M.ui = {
 		"rosepine",
 		"catppuccin"
 	},
-	transparency = true,
+	transparency = false,
 	statusline = {
 		theme = "minimal"
 	},
