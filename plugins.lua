@@ -17,6 +17,10 @@ local plugins = {
 				"python-lsp-server"
 			}
 		}
+	},
+	{
+		"42paris/42header",
+		event = "VeryLazy",
 	}
 }
 
