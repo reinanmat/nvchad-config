@@ -11,6 +11,9 @@ M.ui = {
 	statusline = {
 		theme = "minimal"
 	},
+	nvdash = {
+		load_on_startup = true,
+	}
 }
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
