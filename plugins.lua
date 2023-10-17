@@ -21,7 +21,13 @@ local plugins = {
 	{
 		"42paris/42header",
 		event = "VeryLazy",
-	}
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		config = function ()
+			require "custom.configs.blankline"
+		end,
+	},
 }
 
 return plugins
