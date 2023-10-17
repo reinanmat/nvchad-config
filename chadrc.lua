@@ -2,7 +2,11 @@
 local M = {}
 
 M.ui = {
-	theme = 'rosepine',
+	theme = "rosepine",
+	theme_toggle = {
+		"rosepine",
+		"catppuccin"
+	},
 	transparency = true,
 	statusline = {
 		theme = "minimal"
