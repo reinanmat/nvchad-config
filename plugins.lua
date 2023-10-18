@@ -24,9 +24,10 @@ local plugins = {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		config = function ()
-			require "custom.configs.blankline"
-		end,
+		enabled = false,
+		-- config = function ()
+		-- 	require "custom.configs.blankline"
+		-- end,
 	},
 }
 
