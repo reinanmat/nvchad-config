@@ -1,16 +1,12 @@
 local M = {}
 
-M.disabled = {
-	n = {
-		["jk"] = ""
-	}
-}
-
 M.abc = {
   n = {
+	["<C-j>"] = { "<cmd>m +1 <CR>" },
+    ["<C-k>"] = { "<cmd>m -2 <CR>" },
 	["<leader>h"] = { "<cmd>:Stdheader <CR>" },
-    ["x"] = { '"_x"' },
-    ["<leader>if"] = { "=i{" },
+	["x"] = { '"_x"' },
+	["<leader>if"] = { "=i{" },
 	["<leader>w"] = {"<cmd>:w <CR>"},
 	["<leader>q"] = {"<cmd>:qa <CR>"},
 	["<leader>tt"] = {
@@ -27,13 +23,13 @@ M.abc = {
 	},
   },
   i = {
-    ["<C-j>"] = { "<cmd>m +1 <CR>" },
+	["<C-j>"] = { "<cmd>m +1 <CR>" },
     ["<C-k>"] = { "<cmd>m -2 <CR>" },
-    ["jk"] = { "<ESC>"}
   },
   v = {
     ["<C-j>"] = { ":m '>+1<CR>gv=gv" },
-    ["<C-k>"] = { ":m '>-2<CR>gv=gv" }
+    ["<C-k>"] = { ":m '>-2<CR>gv=gv" },
+	["<leader>if"] = { "=i{" },
   }
 }
 
