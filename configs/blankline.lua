@@ -6,8 +6,11 @@ vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
 vim.opt.list = true
+vim.opt.listchars:append ""
+vim.opt.listchars:append ""
 
 require("indent_blankline").setup {
+	show_current_context = false,
 	show_current_context_start = false,
 	space_char_blankline = " ",
 	char_highlight_list = {
