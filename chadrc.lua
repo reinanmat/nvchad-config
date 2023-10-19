@@ -5,9 +5,9 @@ M.ui = {
 	theme = "rosepine",
 	theme_toggle = {
 		"rosepine",
-		"catppuccin"
+		"rosepine"
 	},
-	transparency = false,
+	transparency = true,
 	statusline = {
 		theme = "minimal"
 	},

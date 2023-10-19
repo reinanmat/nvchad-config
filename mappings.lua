@@ -6,35 +6,41 @@ M.disabled = {
 	}
 }
 
-M.abc = {
-  n = {
-	["<leader>h"] = { "<cmd>:Stdheader <CR>" },
-    ["x"] = { '"_x"' },
-    ["<leader>if"] = { "=i{" },
-	["<leader>w"] = {"<cmd>:w <CR>"},
-	["<leader>q"] = {"<cmd>:qa <CR>"},
-	["<leader>tt"] = {
-		function()
-			require("base46").toggle_transparency()
-		end,
-		"toggle transparency",
+M.mymaps = {
+	n = {
+		["<C-k>"] = { "<cmd>m -2 <CR>", "move the line up" },
+		["<C-j>"] = { "<cmd>m +1 <CR>", "move the line down" },
+		["<leader>h"] = { "<cmd>:Stdheader <CR>" },
+		["x"] = { '"_x"' },
+		["<leader>if"] = { "=i{" },
+		["<leader>q"] = {"<cmd>:qa <CR>", "close neovim" },
+		["<leader>tt"] = {
+			function()
+				require("base46").toggle_transparency()
+			end,
+			"toggle transparency",
+		},
+		["<S-t>"] = {
+			function()
+				require("base46").toggle_theme(0)
+			end,
+			"toggle theme",
+		},
 	},
-	["<S-t>"] = {
-		function()
-			require("base46").toggle_theme(0)
-		end,
-		"toggle transparency",
+	i = {
+		["<C-k>"] = { "<cmd>m -2 <CR>", "move the line up" },
+		["<C-j>"] = { "<cmd>m +1 <CR>", "move the line down" },
+		["jk"] = { "<ESC>", "escape insert mode "}
 	},
-  },
-  i = {
-    ["<C-j>"] = { "<cmd>m +1 <CR>" },
-    ["<C-k>"] = { "<cmd>m -2 <CR>" },
-    ["jk"] = { "<ESC>"}
-  },
-  v = {
-    ["<C-j>"] = { ":m '>+1<CR>gv=gv" },
-    ["<C-k>"] = { ":m '>-2<CR>gv=gv" }
-  }
+	v = {
+		["<C-k>"] = { ":m '>-2<CR>gv=gv", "move the line up" },
+		["<C-j>"] = { ":m '>+1<CR>gv=gv", "move the line down" },
+		["<leader>if"] = { "=i{" },
+	}
 }
+
+vim.keymap.set("n", "<leader><leader>", function ()
+	vim.cmd("so")
+end)
 
 return M
