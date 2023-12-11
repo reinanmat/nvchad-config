@@ -28,5 +28,3 @@ opt.termguicolors = true
 opt.scrolloff = 5
 
 opt.updatetime = 50
-
-opt.colorcolumn = "80"
