@@ -1,28 +1,48 @@
-local base = require("plugins.configs.lspconfig")
-local on_attach = base.on_attach
-local capabilities = base.capabilities
+local on_attach = require("plugins.configs.lspconfig").on_attach
+local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
+local lspconfig = require "lspconfig"
+local servers = { "lua_ls", "clangd", "pyright" }
 
-lspconfig.clangd.setup {
-	cmd = {"clangd", "--header-insertion=never"},
-	on_attach = function(client, bufnr)
-		client.server_capabilities.signatureHelpProvider = false
-		client.server_capabilities.arguments = "--header-insertion=never"
-		on_attach(client, bufnr)
-	end,
-	capabilities = capabilities,
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	}
+end
+
+lspconfig.lua_ls.setup {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+			completion = {
+				callSnippet = "Replace",
+			},
+		},
+	},
 }
 
-lspconfig.pylsp.setup{
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = {'W391'},
-          maxLineLength = 100
-        }
-      }
-    }
-  }
+lspconfig.clangd.setup {
+	cmd = { "clangd", "--header-insertion=never" },
+}
+
+lspconfig.pyright.setup {
+	cmd = { "pyright-langserver", "--stdio" },
+	settings = {
+		analysis = {
+			autoSearchPaths = true,
+			diagnosticMode = "openFilesOnly",
+			useLibraryCodeForTypes = true
+		}
+	}
+}
+
+lspconfig.tsserver.setup {
+	init_options = {
+		preferences = {
+			disableSuggestions = true,
+		}
+	}
 }

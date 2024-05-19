@@ -1,11 +1,5 @@
 local M = {}
 
-M.disabled = {
-	n = {
-		["jk"] = ""
-	}
-}
-
 M.mymaps = {
 	n = {
 		["<C-k>"] = { "<cmd>m -2 <CR>", "move the line up" },
@@ -38,9 +32,5 @@ M.mymaps = {
 		["<leader>if"] = { "=i{" },
 	}
 }
-
-vim.keymap.set("n", "<leader><leader>", function ()
-	vim.cmd("so")
-end)
 
 return M
