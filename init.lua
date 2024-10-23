@@ -1,37 +1,37 @@
-local g = vim.g
-local opt = vim.opt
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
 
-opt.number = true
-opt.relativenumber = true
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = false
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+end
 
-opt.smartindent = true
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.rtp:prepend(lazypath)
 
-opt.cursorline = false
+local lazy_config = require "configs.lazy"
 
-opt.wrap = false
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+  },
 
-opt.swapfile = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.undofile = true
+  { import = "plugins" },
+}, lazy_config)
 
-g.user42 = 'revieira'
-g.mail42 = 'revieira@student.42sp.org.br'
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 
-opt.fileencoding = 'utf-8'
-opt.termguicolors = true
+require "options"
+require "nvchad.autocmds"
 
-opt.splitright = true
-opt.splitbelow = true
-
-opt.scrolloff = 5
-
-opt.updatetime = 50
-
-opt.clipboard:append("unnamedplus")
+vim.schedule(function()
+  require "mappings"
+end)
