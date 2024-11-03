@@ -29,8 +29,50 @@ local servers = {
 	html = {},
 	cssls = {},
 	eslint = {},
-	tailwindcss = {},
-	ts_ls = {},
+
+	tailwindcss = {
+		cmd = { "tailwindcss-language-server", "--stdio" },
+		filetypes = { "html", "css", "javascript", "typescript" },
+		init_options = {
+			userConfig = {
+				css = {
+					validate = true,
+				},
+			},
+		}
+	},
+
+	ts_ls = {
+		init_options = {
+			plugins = {
+				{
+					name = "@vue/typescript-plugin",
+					location = "",
+					languages = { "vue" },
+				},
+			},
+		},
+		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+	},
+
+	volar = {
+		cmd = { "vue-language-server", "--stdio"},
+		init_options = {
+			vue = {
+				hybridMode = true,
+			},
+			languageFeatures = {
+				implementation = true,
+				references = true,
+				definition = true,
+				typeDefinition = true,
+				callHierarchy = true,
+				hover = true,
+				rename = true,
+				renameFileRefactoring = true,
+			},
+		},
+	},
 
 	lua_ls = {
 		settings = {

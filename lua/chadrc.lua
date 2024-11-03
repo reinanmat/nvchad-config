@@ -8,6 +8,10 @@ local M = {}
 M.base46 = {
 	theme = "everblush",
 	transparency = false,
+	hl_override = {
+		Comment = { fg = "white" },
+		["@comment"] = { fg = "#888888" },
+	},
 }
 
 M.ui = {
