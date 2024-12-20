@@ -30,11 +30,11 @@ map("n", "<C-j>", "<C-w>j", { desc = "Buffer switch down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Buffer switch up" })
 
 map("n", "<leader>tt", function ()
-	require("base46").toggle_transparency()
+  require("base46").toggle_transparency()
 end, { desc = "toggle transparency" })
 
 map("n", "<leader>tn", function ()
-	require("base46").toggle_theme(0)
+  require("base46").toggle_theme(0)
 end, { desc = "toggle theme" })
 
 -- MOVE LINES

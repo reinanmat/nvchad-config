@@ -101,7 +101,7 @@ local servers = {
 	gopls = {
 		cmd = { "gopls" },
 		filetypes = { "go", "gomod", "gotmpl", "gowork" },
-		-- root_dir = nvlsp.util.root_pattern("go.work", "go.mod", ".git"),
+		root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
 		settings = {
 			gopls = {
 				analyses = {
@@ -124,7 +124,10 @@ local servers = {
 					autoSearchPaths = true,
 					diagnosticMode = "openFilesOnly",
 					useLibraryCodeForTypes = true,
-					extraPaths = { "./core" },
+					extraPaths = {
+						"./core",
+						"/home/reinan/.pyenv/versions/3.13.0/lib/python3.13/site-packages"
+					},
 				},
 			},
 		},

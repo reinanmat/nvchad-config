@@ -6,25 +6,25 @@
 local M = {}
 
 M.base46 = {
-	theme = "everblush",
-	transparency = false,
-	hl_override = {
-		Comment = { fg = "white" },
-		["@comment"] = { fg = "#888888" },
-	},
+  theme = "everblush",
+  transparency = false,
+  hl_override = {
+    Comment = { fg = "white" },
+    ["@comment"] = { fg = "#888888" },
+  },
 }
 
 M.ui = {
-	tabufline = {
-		enabled = false,
-	},
-	blankline = {
-		enabled = false,
-	}
+  tabufline = {
+    enabled = false,
+  },
+  blankline = {
+    enabled = false,
+  }
 }
 
 M.nvdash = {
-	load_on_startup = true,
+  load_on_startup = true,
 }
 
 return M
