@@ -75,8 +75,8 @@ if vim.fn.has("wsl") then
     cache_enabled = 0,
   }
 
-  vim.keymap.set({"n", "v"}, "y", '"+y', { noremap = true, silent = true })
-  vim.keymap.set({"n", "v"}, "p", '"+p', { noremap = true, silent = true })
+  vim.keymap.set({ "n", "v" }, "y", '"+y', { noremap = true, silent = true })
+  vim.keymap.set({ "n", "v" }, "p", '"+p', { noremap = true, silent = true })
 end
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -87,4 +87,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.softtabstop = 2
   end,
 })
-

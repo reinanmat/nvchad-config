@@ -39,7 +39,7 @@ return {
     lazy = false,
     event = { "BufReadPre", "BufNewFile" },
     dependencies = { "nvim-lua/plenary.nvim" },
-    config = function ()
+    config = function()
       require("configs.todo-comments")
     end
   },
@@ -51,7 +51,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     event = "LspAttach",
-    config = function ()
+    config = function()
       require("configs.lsp-saga")
     end
   },
@@ -62,8 +62,8 @@ return {
       require('nvim-ts-autotag').setup({
         opts = {
           -- Defaults
-          enable_close = true, -- Auto close tags
-          enable_rename = true, -- Auto rename pairs of tags
+          enable_close = true,          -- Auto close tags
+          enable_rename = true,         -- Auto rename pairs of tags
           enable_close_on_slash = false -- Auto close on trailing </
         },
         -- Also override individual filetype configs, these take priority.
