@@ -91,6 +91,7 @@ return {
     config = function(_, opts)
       require("gopher").setup(opts)
     end,
+    -- :GoInstallDeps
     build = function()
       vim.cmd [[silent! GoInstallDeps]]
     end,
