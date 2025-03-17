@@ -2,7 +2,6 @@ require("nvchad.configs.lspconfig").defaults()
 
 local nvlsp = require "nvchad.configs.lspconfig"
 
-
 local function get_python_path(workspace)
   -- Use activated virtualenv.
   if vim.env.VIRTUAL_ENV then
@@ -47,32 +46,15 @@ local servers = {
       plugins = {
         {
           name = "@vue/typescript-plugin",
-          location = "",
+          location = "/usr/local/lib/node_modules/@vue/language-server",
           languages = { "vue" },
         },
       },
     },
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" }
   },
 
-  volar = {
-    cmd = { "vue-language-server", "--stdio" },
-    init_options = {
-      vue = {
-        hybridMode = true,
-      },
-      languageFeatures = {
-        implementation = true,
-        references = true,
-        definition = true,
-        typeDefinition = true,
-        callHierarchy = true,
-        hover = true,
-        rename = true,
-        renameFileRefactoring = true,
-      },
-    },
-  },
+  volar = {},
 
   lua_ls = {
     settings = {
