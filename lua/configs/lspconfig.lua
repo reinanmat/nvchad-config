@@ -28,6 +28,7 @@ local servers = {
   html = {},
   cssls = {},
   eslint = {},
+  jdtls = {},
 
   tailwindcss = {
     cmd = { "tailwindcss-language-server", "--stdio" },

@@ -9,6 +9,7 @@ require("mason-lspconfig").setup({
     "tailwindcss",
     "html",
     "cssls",
+    "jdtls",
   },
   automatic_installation = false,
 })

@@ -85,6 +85,7 @@ return {
       return require "configs.null-ls"
     end,
   },
+
   {
     "olexsmir/gopher.nvim",
     ft = "go",
@@ -96,4 +97,8 @@ return {
       vim.cmd [[silent! GoInstallDeps]]
     end,
   },
+
+  {
+    "mfussenegger/nvim-jdtls"
+  }
 }

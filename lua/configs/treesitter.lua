@@ -16,6 +16,8 @@ local options = {
     "javascript",
     "tsx",
     "vue",
+    "java",
+    "sql"
   },
 
   highlight = {
