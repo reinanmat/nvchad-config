@@ -45,9 +45,12 @@ map("n", "<A-j>", "<cmd>m .+1 <CR>==", { desc = "move the line down in normal mo
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "move the line up in visual mode" })
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "move the line down in visual mode" })
 
+-- TELESCOPE
+map("n", "<leader><leader>", ":Telescope find_files find_command=rg,--ignore,--hidden,--files --glob=!**/.git/**<CR>")
+
 -- FORMATING
 map({ "n", "v" }, "<leader>mp", function()
-  require("conform").format({
+  require('conform').format({
     lsp_fallback = true,
     async = false,
     timeout_ms = 1000,

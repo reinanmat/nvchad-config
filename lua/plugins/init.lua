@@ -2,12 +2,12 @@ return {
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
+    opts = require("configs.conform")
   },
 
   {
     "nvim-tree/nvim-web-devicons",
-    opts = require "configs.web-devicons"
+    opts = require("configs.web-devicons")
   },
 
   {
@@ -93,5 +93,14 @@ return {
 
   {
     "mfussenegger/nvim-jdtls"
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        dotfiles = true,
+      }
+    }
   }
 }
