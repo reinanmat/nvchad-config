@@ -46,7 +46,8 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "move the line up in visual mode"
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "move the line down in visual mode" })
 
 -- TELESCOPE
-map("n", "<leader><leader>", ":Telescope find_files find_command=rg,--ignore,--hidden,--files --glob=!**/.git/**<CR>")
+map("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>")
+map("n", "<leader><leader>", "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>")
 
 -- FORMATING
 map({ "n", "v" }, "<leader>mp", function()
