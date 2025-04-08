@@ -27,7 +27,7 @@ end
 local servers = {
   html = {},
   cssls = {},
-  eslint = {},
+  -- eslint = {},
   jdtls = {},
 
   tailwindcss = {
@@ -52,10 +52,55 @@ local servers = {
         },
       },
     },
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" }
+    settings = {
+      typescript = {
+        tsserver = {
+          useSyntaxServer = false,
+        },
+        inlayHints = {
+          includeInlayParameterNameHints = 'all',
+          includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+          includeInlayFunctionParameterTypeHints = true,
+          includeInlayVariableTypeHints = true,
+          includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+          includeInlayPropertyDeclarationTypeHints = true,
+          includeInlayFunctionLikeReturnTypeHints = true,
+          includeInlayEnumMemberValueHints = true,
+        },
+      },
+    },
+    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
   },
 
-  volar = {},
+  volar = {
+    init_options = {
+      vue = {
+        hybridMode = false,
+      },
+    },
+    settings = {
+      typescript = {
+        inlayHints = {
+          enumMemberValues = {
+            enabled = true,
+          },
+          functionLikeReturnTypes = {
+            enabled = true,
+          },
+          propertyDeclarationTypes = {
+            enabled = true,
+          },
+          parameterTypes = {
+            enabled = true,
+            suppressWhenArgumentMatchesName = true,
+          },
+          variableTypes = {
+            enabled = true,
+          },
+        },
+      },
+    },
+  },
 
   lua_ls = {
     settings = {
