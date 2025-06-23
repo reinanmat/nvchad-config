@@ -8,7 +8,7 @@ local opts = {
     -- Web
     b.formatting.prettier.with {
       command = "node_modules/.bin/prettier",
-      filetypes = { "html", "markdown", "css", "typescript" },
+      filetypes = { "html", "markdown", "css", "typescript", "typescriptreact" },
     },
 
     -- Golang

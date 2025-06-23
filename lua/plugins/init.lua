@@ -72,8 +72,9 @@ return {
   },
 
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     ft = "go",
+    event = "VeryLazy",
     opts = function()
       return require "configs.null-ls"
     end,
