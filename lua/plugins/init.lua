@@ -73,8 +73,7 @@ return {
 
   {
     "nvimtools/none-ls.nvim",
-    ft = "go",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     opts = function()
       return require "configs.null-ls"
     end,
@@ -119,4 +118,8 @@ return {
       },
     },
   },
+
+  {
+    "lukas-reineke/lsp-format.nvim"
+  }
 }
